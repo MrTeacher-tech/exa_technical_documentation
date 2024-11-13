@@ -129,20 +129,20 @@ def txt_to_str(TXT_FILE):
 
 Now that you have functions to convert your PDF into a string, the next step is to create a function that sends this string to an LLM, prompting it to generate Exa queries.
 
-Before writing this function, it is important for you to understand the best prompt practices for your LLM of choice and for Exa. If you would like to see some best practices for using the Anthropic API for legal analysis, you can review [this example use case](https://docs.anthropic.com/en/docs/about-claude/use-case-guides/legal-summarization). Exa works best with [prompts](https://docs.exa.ai/reference/prompting-guide) that:
+It is important for you to understand the best prompt practices for your LLM of choice and for Exa. If you would like to see some best practices for using the Anthropic API for legal analysis, you can review [this example use case](https://docs.anthropic.com/en/docs/about-claude/use-case-guides/legal-summarization). Exa works best with [prompts](https://docs.exa.ai/reference/prompting-guide) that:
 
 * Are Phrased as Statements: "Here's a great article about X:" works better than "What is X?
 * End with a Colon: Many effective prompts end with ":", mimicking natural link sharing.
 
-In the following function, you will prompt Claude to return queries that follow these prompting practices. You will also prompt Claude to return the queries in a particular structure (seperated by new line characters), ensuring that you will get consistant output that can be parsed efficiently.
+In the following function, you will prompt Claude to return queries that follow these prompting practices. You will also prompt Claude to return the queries in a particular structure (seperated by new line characters), ensuring that you will get consistant output that can be parsed efficiently. This function is also going to take the string of text from the PDF and the list of details you created as arguements.
 
 ```python
-def summarize_document(text, details_to_extract, model="claude-3-5-sonnet-20241022", max_tokens=1000):
+def queries_from_document(text, details_to_extract, model="claude-3-5-sonnet-20241022", max_tokens=1000):
 
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = '\n'.join(details_to_extract)
     
-    # Prompt the model to summarize the sublease agreement
+    # Prompt the model to generate queries
     prompt = f"""Generate google search queries that will tell us more about the background of this court filing. The queries should be formatted as article titles. Focus on these key aspects:
 
     {details_to_extract_str}
@@ -237,7 +237,7 @@ if __name__ == "__main__":
     document_text = txt_to_str(TXT_FILE)
 
 
-    document_queries = summarize_document(document_text, details_to_extract)
+    document_queries = queries_from_document(document_text, details_to_extract)
 
     batch_results = batch_exa_search(document_queries)
 

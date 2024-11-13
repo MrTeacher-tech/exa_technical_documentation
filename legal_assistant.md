@@ -32,7 +32,7 @@ pip install pymupdf
 pip install python-dotenv
 ```
 
-Create a directory for your project. In this directory, you should have your Python file, the PDF you would like to analyze and a .env file. It be structured like this:
+Create a directory for your project. In this directory, you should have your Python file, the PDF you would like to analyze and a .env file. It should be structured like this:
 
 ```bash
 project/

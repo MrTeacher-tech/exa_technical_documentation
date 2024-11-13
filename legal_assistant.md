@@ -41,7 +41,7 @@ project/
 ├── .env
 ```
 
-Next, add your API keys to your .env file. This allows you to share your Python file with others while keeping our API keys seperate and secret.
+Next, add your API keys to your .env file. This allows you to share your Python file with others while keeping your API keys seperate and secret.
 
 ```bash
 EXA_API_KEY='YOUR API KEY HERE'

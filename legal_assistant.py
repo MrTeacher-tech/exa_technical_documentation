@@ -31,12 +31,12 @@ def txt_to_str(TXT_FILE):
 
 
 
-def summarize_document(text, details_to_extract, model="claude-3-5-sonnet-20241022", max_tokens=1000):
+def queries_from_document(text, details_to_extract, model="claude-3-5-sonnet-20241022", max_tokens=1000):
 
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = '\n'.join(details_to_extract)
     
-    # Prompt the model to summarize the sublease agreement
+    # Prompt the model to generate queries
     prompt = f"""Generate google search queries that will tell us more about the background of this court filing. The queries should be formatted as article titles. Focus on these key aspects:
 
     {details_to_extract_str}
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     document_text = txt_to_str(TXT_FILE)
 
 
-    document_queries = summarize_document(document_text, details_to_extract)
+    document_queries = queries_from_document(document_text, details_to_extract)
 
     batch_results = batch_exa_search(document_queries)
 

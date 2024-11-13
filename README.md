@@ -1,5 +1,5 @@
-Andrew Verrilli
-2 Ideas for New Exa Technical Documentation
+**Andrew Verrilli**
+**2 Ideas for New Exa Technical Documentation**
 
 ## Documentation Idea 1: How to Get Started With Python, pip, VScode and .env files
 

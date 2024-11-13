@@ -147,7 +147,7 @@ def summarize_document(text, details_to_extract, model="claude-3-5-sonnet-202410
 
     {details_to_extract_str}
 
-    Provide queries in the form of potential article titles, end each article title with a :, seperat titles by new line characters, do not include categories, each query should be on its own line with no blank lines. For example:
+    Provide queries in the form of potential article titles, end each article title with a :, seperate titles by new line characters, do not include categories, each query should be on its own line with no blank lines. For example:
 
     
     query1: 

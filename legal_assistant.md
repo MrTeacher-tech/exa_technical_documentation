@@ -97,6 +97,7 @@ You should write two functions to do this:
 - txt_to_str(TXT_FILE)
 
 ```python
+#function that uses pymupdf to turn PDF into .txt file
 def pdf_to_txt(PDF_NAME, TXT_FILE):
     doc = pymupdf.open(PDF_NAME) # open a document
     out = open(TXT_FILE, "wb") # create a text output
@@ -106,7 +107,7 @@ def pdf_to_txt(PDF_NAME, TXT_FILE):
         out.write(bytes((12,))) # write page delimiter (form feed 0x0C)
     out.close()
 
-
+#function to read .txt file and return contents as string
 def txt_to_str(TXT_FILE):
     text_string = ""
     # Read text from a .txt file

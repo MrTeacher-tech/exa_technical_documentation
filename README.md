@@ -1,7 +1,7 @@
 Andrew Verrilli
 2 Ideas for New Exa Technical Documentation
 
-# Documentation Idea 1: How to Get Started With Python, pip, VScode and .env files
+## Documentation Idea 1: How to Get Started With Python, pip, VScode and .env files
 
 I’ve spoken with many friends, who do everything from paralegal work to financial analysis, who would like to go beyond what interactive AI models such as Perplexity and ChatGPT offer.  From these conversations, I’ve learned that simply setting up a programming environment is a major barrier to entry. The process of downloading Python, installing pip, and configuring an IDE and project workspace is often assumed knowledge in technical documentation for most leading AI tools. 
 
@@ -9,7 +9,7 @@ For non-developers interested in using these APIs, finding the necessary setup i
 
 In addition, most users learn well from examples. Having a greater number of simple code snippets, which users can cut, paste, build, and learn from, will enable users to effectively leverage the APIs of AI companies like Exa. 
 
-# Documentation Idea 2: How to Use Exa and Claude to Create a Legal Assistant Tool
+## Documentation Idea 2: How to Use Exa and Claude to Create a Legal Assistant Tool
 _see legal_assistant.md to view the documentation I created for this idea_
 
 Exa is a powerful tool on its own. However, it is clear from the provided demos and tutorials that it is even more powerful when combined with an LLM. Anthropic’s technical documentation highlights legal analysis as a key use case for their Claude model. Thus, it is fitting for Exa to create a companion tutorial that demonstrates how its API can add even more value to this use case. To make this tutorial useful for the intended end users, it is important to also include how to read a PDF file with Python.

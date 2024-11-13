@@ -120,7 +120,7 @@ def txt_to_str(TXT_FILE):
 
 ```
 
-> **Note:** You may notice that txt_to_str(TXT_FILE) reads the .txt file line by line and checks if the line is just a number. This is because legal filings typically have line numbers. Giving your LLM lines with just number markings can confuse it and be costly. Especially when analyzing large documents.
+> **Note:** You may notice that txt_to_str(TXT_FILE) reads the .txt file line by line and checks if the line is just a number. This is because legal filings typically have line numbers. Giving your LLM lines with just number markings may confuse it and be costly, especially when analyzing large documents.
 
 ---
 
